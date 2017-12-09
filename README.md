@@ -12,6 +12,7 @@ package main
 
 import (
     "log"
+    "net/http"
 
     "github.com/go-kivik/proxy"
 )
