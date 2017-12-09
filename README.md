@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/go-kivik/proxy.svg?branch=master)](https://travis-ci.org/go-kivik/proxy)  [![GoDoc](https://godoc.org/github.com/go-kivik/proxy?status.svg)](http://godoc.org/github.com/go-kivik/proxy)
+[![Build Status](https://travis-ci.org/go-kivik/proxy.svg?branch=master)](https://travis-ci.org/go-kivik/proxy) [![Codecov](https://img.shields.io/codecov/c/github/go-kivik/proxy.svg?style=flat)](https://codecov.io/gh/go-kivik/proxy) [![GoDoc](https://godoc.org/github.com/go-kivik/proxy?status.svg)](http://godoc.org/github.com/go-kivik/proxy)
 
 # Kivik Proxy
 
