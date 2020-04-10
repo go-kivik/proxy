@@ -10,6 +10,8 @@ import (
 	"net/url"
 	"os"
 	"testing"
+
+	"gitlab.com/flimzy/testy"
 )
 
 func mustNew(t *testing.T, url string) *Proxy {
@@ -38,7 +40,7 @@ func TestNew(t *testing.T) {
 		{
 			Name:  "InvalidURL",
 			URL:   "http://foo.com:port with spaces/",
-			Error: `parse http://foo.com:port with spaces/: invalid character " " in host name`,
+			Error: `^parse "?http://foo.com:port"? (with spaces|invalid port)`,
 		},
 		{
 			Name:  "Auth",
@@ -56,13 +58,7 @@ func TestNew(t *testing.T) {
 			t.Run(test.Name, func(t *testing.T) {
 				t.Parallel()
 				_, err := New(test.URL)
-				var msg string
-				if err != nil {
-					msg = err.Error()
-				}
-				if msg != test.Error {
-					t.Errorf("Expected error: %s\n  Actual error: %s", test.Error, msg)
-				}
+				testy.ErrorRE(t, test.Error, err)
 			})
 		}(test)
 	}
